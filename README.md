@@ -7,7 +7,7 @@ The **vim-snippets** repository contains a collection of code snippets for **Vim
 * [snipMate](https://github.com/msanders/snipmate.vim)
 * others in the future
 
-It has been for specialized for C and php, containing snippets for every standard function. Other languages are available to a different degree of completeness.
+It has been specialized for C and php, containing snippets for every standard function. Other languages are available to a different degree of completeness.
 
 ## Installation
 
