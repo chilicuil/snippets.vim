@@ -50,6 +50,8 @@ snippet echo
 	printf "%s\\n" ${1:"string"}
 snippet printf
 	printf "%s\\n" ${1:"string"}
+snippet which
+	command -v "${1:cmd}"${2}
 snippet r>
 	#close stdout
 	exec 1<&-
