@@ -61,3 +61,5 @@ snippet r>
 	#redirect stderr to stdout
 	exec 2>&1
 	${2}
+snippet version
+	`strftime("%Y.%m.%d-%H:%M")`
