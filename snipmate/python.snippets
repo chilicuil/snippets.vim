@@ -3,40 +3,107 @@ snippet #!
 
 snippet import
 	import ${1:module}
-# Module Docstring
+snippet from
+	from ${2:package} import ${1:module}${3}
+snippet future
+	from __future__ import ${1:module}
 snippet docs
 	'''
 	File: ${1:`Filename('$1.py', 'foo.py')`}
 	Author: ${2:`g:snips_author`}
 	Description: ${3}
 	'''
+snippet dic
+	${1:variable} = { ${2:"key"}:${3:"value"}, ${4:...}}${5}
+snippet dict
+	${1:variable} = { ${2:"key"}:${3:"value"}, ${4:...}}${5}
+snippet dictionary
+	${1:variable} = { ${2:"key"}:${3:"value"}, ${4:...}}${5}
+snippet list
+	${1:variable} = [ ${2:"value1"}, ${3:...}]${4}
+snippet set
+	${1:variable} = { ${2:"value1"}, ${3:...}}${4}
+snippet tuple
+	${1:variable} = { ${2:"value1"}, ${3:...}}${4}
+snippet if
+	if ${1:condition}:
+		${2:#code...}
+snippet elif
+	elif ${1:condition}:
+		${2:#code...}
+snippet else
+	else:
+		${2:#code...}
 snippet while
 	while ${1:condition}:
-		${2:# code...}
+		${2:#code...}
 snippet for
-	for ${1:needle} in ${2:haystack}:
-		${3:# code...}
-# New Class
-snippet class
+	for ${1:item} in ${2:items}:
+		${3:#code...}
+snippet with
+	with ${1:expr} as ${2:var}:
+		${3:#code ...}
+snippet switch
+	class switch(object):
+		def __init__(self, value):
+			self.value = value
+			self.fall = False
+
+		def __iter__(self):
+			"""Return the match method once, then stop"""
+			yield self.match
+			raise StopIteration
+
+		def match(self, *args):
+			"""Indicate whether or not to enter a case suite"""
+			if self.fall or not args:
+				return True
+			elif self.value in args:
+				self.fall = True
+				return True
+			else:
+				return False
+snippet case
+	for case in switch(${1:variable}): #no switch/case statements in python
+		if case(${2:'pattern'}):
+			${3:#code ...}
+			break
+		if case(): #default, could also just omit condition or 'if True'
+			${4:#more code ...}
+			break
+snippet class simple
+	class ${1:ClassName}:
+		"""${2:docstring for $1}"""
+		def __init__(self, ${3:...}):
+			${4}
+snippet class object
 	class ${1:ClassName}(${2:object}):
 		"""${3:docstring for $1}"""
-		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
-			self.$4 = $4
-			${6}
-# New Function
-snippet def function with docstring
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		def __init__(self, ${4:...}):
+			$2.__init__(self, $4)
+			${5}
+snippet fun
+	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
-		${4:pass}
-snippet def function without docstring
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		${3}
-# New Method
+		${4:#code ...}
+snippet func
+	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
+		"""${3:docstring for $1}"""
+		${4:#code ...}
+snippet function
+	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
+		"""${3:docstring for $1}"""
+		${4:#code ...}
+snippet def function
+	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
+		"""${3:docstring for $1}"""
+		${4:#code ...}
+snippet method
+	def ${1:method}(self, ${2:arg}):
+		${3:#code ...}
 snippet def method
-	def ${1:mname}(self, ${2:arg}):
-		${3:pass}
-# New Property
+	def ${1:method}(self, ${2:arg}):
+		${3:#code ...}
 snippet property
 	def ${1:foo}():
 		doc = "${2:The $1 property.}"
@@ -44,43 +111,41 @@ snippet property
 			${3:return self._$1}
 		def fset(self, value):
 			${4:self._$1 = value}
-# Lambda
 snippet ld
 	${1:var} = lambda ${2:vars} : ${3:action}
 snippet .
 	self.
 snippet try Try/Except
 	try:
-		${1:pass}
+		${1:#code ...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 snippet try Try/Except/Else
 	try:
-		${1:pass}
+		${1:#code ...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:pass}
+		${5:#code ...}
 snippet try Try/Except/Finally
 	try:
-		${1:pass}
+		${1:#code ...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	finally:
-		${5:pass}
+		${5:#code ...}
 snippet try Try/Except/Else/Finally
 	try:
-		${1:pass}
+		${1:#code ...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:pass}
+		${5:#code ...}
 	finally:
-		${6:pass}
-# if __name__ == '__main__':
+		${6:#code ...}
 snippet ifmain
 	if __name__ == '__main__':
-		${1:main()}
+		${1:main()}${2}
 # __magic__
 snippet _
 	__${1:init}__${2}
