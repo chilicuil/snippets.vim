@@ -42,3 +42,776 @@ snippet com
 	command! -nargs=${1:number_of_args} ${2:other_params} ${2:name} ${2:command}
 snippet Bundle
 	Bundle '${1:url}'${2}
+
+######################################################################
+#                           :help functions
+######################################################################
+
+#List   argv() # the argument list
+snippet argv #list
+	${1:List }argv()${2}
+#Number argc() # number of files in the argument list
+snippet argc
+	${1:Number }argc()${2}
+#Number argidx() # current index in the argument list
+snippet argidx
+	${1:Number }argidx()${2}
+#String getcwd() # the current working directory
+snippet getcwd
+	${1:String }getcwd()${2}
+#Number getpid() # process ID of Vim
+snippet getpid
+	${1:Number }getpid()${2}
+#Number wincol() # window column of the cursor
+snippet wincol
+	${1:Number }wincol()${2}
+#Number winline() # window line of the cursor
+snippet winline
+	${1:Number }winline()${2}
+#String argv({nr}) # {nr} entry of the argument list
+snippet argv #string
+	${1:String }argv(${2:nr})${3}
+#Number changenr() # current change number
+snippet changenr
+	${1:Number }changenr()${2}
+#String foldtext() # line displayed for closed fold
+snippet foldtext
+	${1:String }foldtext()${2}
+#String hostname() # name of the machine Vim is running on
+snippet hostname
+	${1:String }hostname()${2}
+#List   tagfiles() # tags files used
+snippet tagfiles
+	${1:List }tagfiles()${2}
+#String tempname() # name for a temporary file
+snippet tempname
+	${1:String }tempname()${2}
+#List   undotree() # undo file tree
+snippet undotree
+	${1:List }undotree()${2}
+#Float  cos({expr}) # cosine of {expr}
+snippet cos
+	${1:Float }cos(${2:expr})${3}
+#Number col({expr}) # column nr of cursor or mark
+snippet col
+	${1:Number }col(${2:expr})${3}
+#Float  exp({expr}) # exponential of {expr}
+snippet exp
+	${1:Float }exp(${2:expr})${3}
+#Number getcmdpos() # return cursor position in command-line
+snippet getcmdpos
+	${1:Number }getcmdpos()${2}
+#List   getqflist() # list of quickfix items
+snippet getqflist
+	${1:List }getqflist()${2}
+#Number inputsave() # save and clear typeahead
+snippet inputsave
+	${1:Number }inputsave()${2}
+#Float  tan({expr}) # tangent of {expr}
+snippet tan
+	${1:Float }tan(${2:expr})${3}
+#Number max({list}) # maximum value of items in {list}
+snippet max
+	${1:Number }max(${2:list})${3}
+#Number min({list}) # minimum value of items in {list}
+snippet min
+	${1:Number }min(${2:list})${3}
+#Number len({expr}) # the length of {expr}
+snippet len
+	${1:Number }len(${2:expr})${3}
+#Number localtime() # current time
+snippet localtime
+	${1:Number }localtime(${2:}})${3}
+#Float  log({expr}) # natural logarithm (base e) of {expr}
+snippet log
+	${1:Float }log(${2:expr})${3}
+#Float  sin({expr}) # sine of {expr}
+snippet sin
+	${1:Float }sin(${2:expr})${3}
+#Float  acos({expr}) # arc cosine of {expr}
+snippet acos
+	${1:Float }acos(${2:expr})${3}
+#Float  asin({expr}) # arc sine of {expr}
+snippet asin
+	${1:Float }asin(${2:expr})${3}
+#Float  atan({expr}) # arc tangent of {expr}
+snippet atan
+	${1:Float }atan(${2:expr})${3}
+#Float  ceil({expr}) # round {expr} up
+snippet ceil
+	${1:Float }ceil(${2:expr})${3}
+#any    copy({expr}) # make a shallow copy of {expr}
+snippet copy
+	${1:any }copy(${2:expr})${3}
+#Float  cosh({expr}) # hyperbolic cosine of {expr}
+snippet cosh
+	${1:Float }cosh(${2:expr})${3}
+#Number foreground() # bring the Vim window to the foreground
+snippet foreground
+	${1:Number }foreground()${2}
+#Number getcharmod() # modifiers for the last typed character
+snippet getcharmod
+	${1:Number }getcharmod()${2}
+#String getcmdline() # return the current command-line
+snippet getcmdline
+	${1:String }getcmdline()${2}
+#String getcmdtype() # return the current command-line type
+snippet getcmdtype
+	${1:String }getcmdtype()${2}
+#List   getmatches() # list of current matches
+snippet getmatches
+	${1:List }getmatches()${2}
+#Number getwinposx() # X coord in pixels of GUI Vim window
+snippet getwinposx
+	${1:Number }getwinposx()${2}
+#Number getwinposy() # Y coord in pixels of GUI Vim window
+snippet getwinposy
+	${1:Number }getwinposy()${2}
+#Number hlID({name}) # syntax ID of highlight group {name}
+snippet hlID
+	${1:Number }hlID(${2:name})${3}
+#Float  sqrt({expr}) # square root of {expr}
+snippet sqrt
+	${1:Float }sqrt(${2:expr})${3}
+#Float  tanh({expr}) # hyperbolic tangent of {expr}
+snippet tanh
+	${1:Float }tanh(${2:expr})${3}
+#List   keys({dict}) # keys in {dict}
+snippet keys
+	${1:List }keys(${2:dict})${3}
+#Number line({expr}) # line nr of cursor, last line or mark
+snippet line
+	${1:Number }line(${2:expr})${3}
+#Number type({name}) # type of variable {name}
+snippet type
+	${1:Number }type(${2:name})${3}
+#String winrestcmd() # returns command to restore window sizes
+snippet winrestcmd
+	${1:String }winrestcmd()${2}
+#Float  sinh({expr}) # hyperbolic sine of {expr}
+snippet sinh
+	${1:Float }sinh(${2:expr})${3}
+#String serverlist() # get a list of available servers
+snippet serverlist
+	${1:String }serverlist()${2}
+#String mode([expr]) # current editing mode
+snippet mode
+	${1:String }mode(${2:[expr]})${3}
+#Number pumvisible() # whether popup menu is visible
+snippet pumvisible
+	${1:Number }pumvisible()${2}
+#Float  floor({expr}) # round {expr} down
+snippet floor
+	${1:Float }floor(${2:expr})${3}
+#Number bufnr({expr}) # Number of the buffer {expr}
+snippet bufnr
+	${1:Number }bufnr(${2:expr})${3}
+#Number empty({expr}) # TRUE if {expr} is empty
+snippet empty
+	${1:Number }empty(${2:expr})${3}
+#Number haslocaldir() # TRUE if current window executed |:lcd|
+snippet haslocaldir
+	${1:Number }haslocaldir()${2}
+#Float  trunc({expr}) # truncate Float {expr}
+snippet trunc
+	${1:Float }trunc(${2:expr})${3}
+#List   items({dict}) # key-value pairs in {dict}
+snippet items
+	${1:List }items(${2:dict})${3}
+#Dict   winsaveview() # save view of current window
+snippet winsaveview
+	${1:Dict }winsaveview()${2}
+#Float  log10({expr}) # logarithm of Float {expr} to base 10
+snippet log10
+	${1:Float }log10(${2:expr})${3}
+#Float  round({expr}) # round off {expr}
+snippet round
+	${1:Float }round(${2:expr})${3}
+#Float  pow({x}, {y}) # {x} to the power of {y}
+snippet pow
+	${1:Float }pow(${2:x}, ${3:y})${4}
+#none   clearmatches() # clear all matches
+snippet clearmatches
+	${1:none }clearmatches()${2}
+#Number cursor({list}) # move cursor to position in {list}
+snippet cursor #list
+	${1:Number }cursor(${2:list})${3}
+#Number did_filetype() # TRUE if FileType autocommand event used
+snippet did_filetype
+	${1:Number }did_filetype()${2}
+#any    eval({string}) # evaluate {string} into its value
+snippet eval
+	${1:any }eval(${2:string})${3}
+#Number eventhandler() # TRUE if inside an event handler
+snippet eventhandler
+	${1:Number }eventhandler()${2}
+#Number exists({expr}) # TRUE if {expr} exists
+snippet exists
+	${1:Number }exists(${2:expr})${3}
+#List   getpos({expr}) # position of cursor, mark, etc.
+snippet getpos
+	${1:List }getpos(${2:expr})${3}
+#Number has({feature}) # TRUE if feature {feature} supported
+snippet has
+	${1:Number }has(${2:feature})${3}
+#String string({expr}) # String representation of {expr} value
+snippet string
+	${1:String }string(${2:expr})${3}
+#Number strlen({expr}) # length of the String {expr}
+snippet strlen
+	${1:Number }strlen(${2:expr})${3}
+#Number indent({lnum}) # indent of line {lnum}
+snippet indent
+	${1:Number }indent(${2:lnum})${3}
+#Number inputrestore() # restore typeahead
+snippet inputrestore
+	${1:Number }inputrestore()${2}
+#String submatch({nr}) # specific match in ":s" or substitute()
+snippet submatch
+	${1:String }submatch(${2:nr})${3}
+#List   values({dict}) # values in {dict}
+snippet values
+	${1:List }values(${2:dict})${3}
+#Number winbufnr({nr}) # buffer number of window {nr}
+snippet winbufnr
+	${1:Number }winbufnr(${2:nr})${3}
+#Number winwidth({nr}) # width of window {nr}
+snippet winwidth
+	${1:Number }winwidth(${2:nr})${3}
+#Number invert({expr}) # bitwise invert
+snippet invert
+	${1:Number }invert(${2:expr})${3}
+#String spellbadword() # badly spelled word at cursor
+snippet spellbadword
+	${1:String }spellbadword()${2}
+#List   matcharg({nr}) # arguments of |:match|
+snippet matcharg
+	${1:List }matcharg(${2:nr})${3}
+#any    mzeval({expr}) # evaluate |MzScheme| expression
+snippet mzeval
+	${1:any }mzeval(${2:expr})${3}
+#Number char2nr({expr}) # ASCII value of first char in {expr}
+snippet char2nr
+	${1:Number }char2nr(${2:expr})${3}
+#Number cindent({lnum}) # C indent for line {lnum}
+snippet cindent
+	${1:Number }cindent(${2:lnum})${3}
+#String bufname({expr}) # Name of the buffer {expr}
+snippet bufname
+	${1:String }bufname(${2:expr})${3}
+#Number delete({fname}) # delete file {fname}
+snippet delete
+	${1:Number }delete(${2:fname})${3}
+#Number getchar([expr]) # get one character from the user
+snippet getchar
+	${1:Number }getchar(${2:expr})${3}
+#List   taglist({expr}) # list of tags matching {expr}
+snippet taglist
+	${1:List }taglist(${2:expr})${3}
+#String tolower({expr}) # the String {expr} switched to lowercase
+snippet tolower
+	${1:String }tolower(${2:expr})${3}
+#String toupper({expr}) # the String {expr} switched to uppercase
+snippet toupper
+	${1:String }toupper(${2:expr})${3}
+#Number virtcol({expr}) # screen column of cursor or mark
+snippet virtcol
+	${1:Number }virtcol(${2:expr})${3}
+#Number winheight({nr}) # height of window {nr}
+snippet winheight
+	${1:Number }winheight(${2:nr})${3}
+#Number winnr([{expr}]) # number of current window
+snippet winnr
+	${1:Number }winnr(${2:expr})${3}
+#List   reverse({list}) # reverse {list} in-place
+snippet reverse
+	${1:List }reverse(${2:list})${3}
+#String nr2char({expr}) # single char with ASCII value {expr}
+snippet nr2char
+	${1:String }nr2char(${2:expr})${3}
+#Number complete_check() # check for key typed during completion
+snippet complete_check
+	${1:Number }complete_check()${2}
+#Number bufwinnr({expr}) # window number of buffer {expr}
+snippet bufwinnr
+	${1:Number }bufwinnr(${2:expr})${3}
+#any    deepcopy({expr}) # make a full copy of {expr}
+snippet deepcopy
+	${1:any }deepcopy(${2:expr})${3}
+#Number float2nr({expr}) # convert Float {expr} to a Number
+snippet float2nr
+	${1:Number }float2nr(${2:expr})${3}
+#List   getloclist({nr}) # list of location list items
+snippet getloclist
+	${1:List }getloclist(${2:nr})${3}
+#Number hlexists({name}) # TRUE if highlight group {name} exists
+snippet hlexists
+	${1:Number }hlexists(${2:name})${3}
+#Number strchars({expr}) # character length of the String {expr}
+snippet strchars
+	${1:Number }strchars(${2:expr})${3}
+#String strtrans({expr}) # translate string to make it printable
+snippet strtrans
+	${1:String }strtrans(${2:expr})${3}
+#Number strwidth({expr}) # display cell length of the String {expr}
+snippet strwidth
+	${1:Number }strwidth(${2:expr})${3}
+#String undofile({name}) # undo file name for {name}
+snippet undofile
+	${1:String }undofile(${2:name})${3}
+#Number islocked({expr}) # TRUE if {expr} is locked
+snippet islocked
+	${1:Number }islocked(${2:expr})${3}
+#Number setcmdpos({pos}) # set cursor position in command-line
+snippet setcmdpos
+	${1:Number }setcmdpos(${2:pos})${3}
+#Number byte2line({byte}) # line number at byte count {byte}
+snippet byte2line
+	${1:Number }byte2line(${2:byte})${3}
+#Number bufexists({expr}) # TRUE if buffer {expr} exists
+snippet bufexists
+	${1:Number }bufexists(${2:expr})${3}
+#Number buflisted({expr}) # TRUE if buffer {expr} is listed
+snippet buflisted
+	${1:Number }buflisted(${2:expr})${3}
+#Number bufloaded({expr}) # TRUE if buffer {expr} is loaded
+snippet bufloaded
+	${1:Number }bufloaded(${2:expr})${3}
+#Number foldlevel({lnum}) # fold level at {lnum}
+snippet foldlevel
+	${1:Number }foldlevel(${2:lnum})${3}
+#Funcref function({name}) # reference to function {name}
+snippet function
+	${1:Funcref }function(${2:name})${3}
+#String getfperm({fname}) # file permissions of file {fname}
+snippet getfperm
+	${1:String }getfperm(${2:fname})${3}
+#Number getfsize({fname}) # size in bytes of file {fname}
+snippet getfsize
+	${1:Number }getfsize(${2:fname})${3}
+#Number getftime({fname}) # last modification time of file
+snippet getftime
+	${1:Number }getftime(${2:fname})${3}
+#String getftype({fname}) # description of type of file {fname}
+snippet getftype
+	${1:String }getftype(${2:fname})${3}
+#Number histnr({history}) # highest index of a history
+snippet histnr
+	${1:Number }histnr(${2:history})${3}
+#Float  str2float({expr}) # convert String to Float
+snippet str2float
+	${1:Float }str2float(${2:expr})${3}
+#Number line2byte({lnum}) # byte count of line {lnum}
+snippet line2byte
+	${1:Number }line2byte(${2:lnum})${3}
+#String soundfold({word}) # sound-fold {word}
+snippet soundfold
+	${1:String }soundfold(${2:word})${3}
+#Number matchdelete({id}) # delete match identified by {id}
+snippet matchdelete
+	${1:Number }matchdelete(${2:id})${3}
+#Number executable({expr}) # 1 if executable {expr} exists
+snippet executable
+	${1:Number }executable(${2:expr})${3}
+#Number foldclosed({lnum}) # first line of fold at {lnum} if closed
+snippet foldclosed
+	${1:Number }foldclosed(${2:lnum})${3}
+#Number tabpagenr([{arg}]) # number of current or last tab page
+snippet tabpagenr
+	${1:Number }tabpagenr(${2:arg})${3}
+#String visualmode([expr]) # last visual mode used
+snippet visualmode
+	${1:String }visualmode(${2:expr})${3}
+#Number lispindent({lnum}) # Lisp indent for line {lnum}
+snippet lispindent
+	${1:Number }lispindent(${2:lnum})${3}
+#String reltimestr({time}) # turn time value into a String
+snippet reltimestr
+	${1:String }reltimestr(${2:time})${3}
+#Number or({expr}, {expr}) # bitwise OR
+snippet or
+	${1:Number }or(${2:expr}, ${3:expr})${4}
+#Number setmatches({list}) # restore a list of matches
+snippet setmatches
+	${1:Number }setmatches(${2:list})${3}
+#Number diff_filler({lnum}) # diff filler lines about {lnum}
+snippet diff_filler
+	${1:Number }diff_filler(${2:lnum})${3}
+#List   add({list}, {item}) # append {item} to |List| {list}
+snippet add #append
+	${1:List }add(${2:list}, ${3:item})${4}
+#Number and({expr}, {expr}) # bitwise AND
+snippet add #bitwise AND
+	${1:Number }add(${2:expr}, ${3:expr})${4}
+#Number synIDtrans({synID}) # translated syntax ID of {synID}
+snippet synIDtrans
+	${1:Number }synIDtrans(${2:synID})${3}
+#none   winrestview({dict}) # restore view of current window
+snippet winrestview
+	${1:none }winrestview(${2:dict})${3}
+#Number xor({expr}, {expr}) # bitwise XOR
+snippet xor
+	${1:Number }xor(${2:expr}, ${3:expr})${4}
+#String resolve({filename}) # get filename a shortcut points to
+snippet resolve
+	${1:String }resolve(${2:filename})${3}
+#String pathshorten({expr}) # shorten directory names in a path
+snippet pathshorten
+	${1:String }pathshorten(${2:expr})${3}
+#Float or Number abs({expr}) # absolute value of {expr}
+snippet abs
+	${1:Float or Number }abs(${2:expr})${3}
+#Number complete_add({expr}) # add completion match
+snippet complete_add
+	${1:Number }complete_add(${2:expr})${3}
+#Number filereadable({file}) # TRUE if {file} is a readable file
+snippet filereadable
+	${1:Number }filereadable(${2:file})${3}
+#Number filewritable({file}) # TRUE if {file} is a writable file
+snippet filewritable
+	${1:Number }filewritable(${2:file})${3}
+#String fnameescape({fname}) # escape special characters in {fname}
+snippet fnameescape
+	${1:String }fnameescape(${2:fname})${3}
+#String simplify({filename}) # simplify filename as much as possible
+snippet simplify
+	${1:String }simplify(${2:filename})${3}
+#Number rename({from}, {to}) # rename (move) file from {from} to {to}
+snippet rename
+	${1:Number }rename(${2:from}, ${3:to})${4}
+#Number nextnonblank({lnum}) # line nr of non-blank line >= {lnum}
+snippet nextnonblank
+	${1:Number }nextnonblank(${2:lnum})${3}
+#Number prevnonblank({lnum}) # line nr of non-blank line <= {lnum}
+snippet prevnonblank
+	${1:Number }prevnonblank(${2:lnum})${3}
+#Float  atan2({expr}, {expr}) # arc tangent of {expr1} / {expr2}
+snippet atan2
+	${1:Float }atan2(${2:expr}, ${3:expr})${4}
+#Number byteidx({expr}, {nr}) # byte index of {nr}'th char in {expr}
+snippet byteidx
+	${1:Number }byteidx(${2:expr}, ${3:nr})${4}
+#Number foldclosedend({lnum}) # last line of fold at {lnum} if closed
+snippet foldclosedend
+	${1:Number }foldclosedend(${2:lnum})${3}
+#String getfontname([{name}]) # name of font being used
+snippet getfontname
+	${1:String }getfontname(${2:}[{name}]})${3}
+#Number inputlist({textlist}) # let the user pick from a choice list
+snippet inputlist
+	${1:Number }inputlist(${2:textlist})${3}
+#any    remove({dict}, {key}) # remove entry {key} from {dict}
+snippet remove #dict
+	${1:any }remove(${2:dict}, ${3:key})${4}
+#String foldtextresult({lnum}) # text for closed fold at {lnum}
+snippet foldtextresult
+	${1:String }foldtextresult(${2:lnum})${3}
+#List   getline({lnum}, {end}) # lines {lnum} to {end} of current buffer
+snippet getline
+	${1:List }getline(${2:lnum}${3:, end})${4}
+#Number append({lnum}, {list}) # append lines {list} below line {lnum}
+snippet append #list
+	${1:Number }append(${2:lnum}, ${3:list})${4}
+#Float  fmod({expr1}, {expr2}) # remainder of {expr1} / {expr2}
+snippet fmod
+	${1:Float }fmod(${2:expr}, ${3:expr})${4}
+#Number has_key({dict}, {key}) # TRUE if {dict} has entry {key}
+snippet has_key
+	${1:Number }has_key(${2:dict}, ${3:key})${4}
+#String join({list} [, {sep}]) # join {list} items into one String
+snippet join
+	${1:String }join(${2:list}${3:, sep})${4}
+#Number setpos({expr}, {list}) # set the {expr} position to {list}
+snippet setpos
+	${1:Number }setpos(${2:expr}, ${3:list})${4}
+#List   synstack({lnum}, {col}) # stack of syntax IDs at {lnum} and {col}
+snippet synstack
+	${1:List }synstack(${2:lnum}, ${3:col})${4}
+#List   tabpagebuflist([{arg}]) # list of buffer numbers in tab page
+snippet tabpagebuflist
+	${1:List }tabpagebuflist(${2:arg})${3}
+#String repeat({expr}, {count}) # repeat {expr} {count} times
+snippet repeat
+	${1:String }repeat(${2:expr}, ${3:count})${4}
+#String getregtype([{regname}]) # type of register
+snippet getregtype
+	${1:String }getregtype(${2:[regname]})${3}
+#String glob({expr} [, {flag}]) # expand file wildcards in {expr}
+snippet glob
+	${1:String }glob(${2:expr}${3:, flag})${4}
+#String remote_read({serverid}) # read reply string
+snippet remote_read
+	${1:String }remote_read(${2:serverid})${3}
+#Number setline({lnum}, {line}) # set line {lnum} to {line}
+snippet setline
+	${1:Number }setline(${2:lnum}, ${3:line})${4}
+#Number append({lnum}, {string}) # append {string} below line {lnum}
+snippet append #string
+	${1:Number }append(${2:lnum}, ${3:string})${4}
+#Number diff_hlID({lnum}, {col}) # diff highlighting at {lnum}/{col}
+snippet diff_hlID
+	${1:Number }diff_hlID(${2:lnum}, ${3:col})${4}
+#Number isdirectory({directory}) # TRUE if {directory} is a directory
+snippet isdirectory
+	${1:Number }isdirectory(${2:directory})${3}
+#List/Dict map({expr}, {string}) # change each item in {expr} to {expr}
+snippet map
+	${1:List or Dict }map(${2:expr}, ${3:string})${4}
+#Number str2nr({expr} [, {base}]) # convert String to Number
+snippet str2nr
+	${1:Number }str2nr(${2:expr}${3:, base})${4}
+#String histadd({history},{item}) # add an item to a history
+snippet histadd
+	${1:String }histadd(${2:history}, ${3:item})${4}
+#String getreg([{regname} [, 1]]) # contents of register
+snippet getreg
+	${1:String }getreg(${2:regname}${3:, 1})${4}
+#String escape({string}, {chars}) # escape {chars} in {string} with '\'
+snippet escape
+	${1:String }escape(${2:string}, ${3:chars})${4}
+#String expand({expr} [, {flag}]) # expand special keywords in {expr}
+snippet expand
+	${1:String }expand(${2:expr}${3:, flag})${4}
+#Number setreg({n}, {v}[, {opt}]) # set register to value and type
+snippet setreg
+	${1:Number }setreg(${2:n}, ${3:v}${4:, opt})${5}
+#String printf({fmt}, {expr1}...) # format text
+snippet printf
+	${1:String }printf(${2:fmt}${3:, expr ...})${4}
+#String system({expr} [, {input}]) # output of shell command/filter {expr}
+snippet system
+	${1:String }system(${2:expr}${3:, input})${4}
+#none   garbagecollect([{atexit}]) # free memory, breaking cyclic references
+snippet garbagecollect
+	${1:none }garbagecollect(${2:atexit})${3}
+#any    gettabvar({nr}, {varname}) # variable {varname} in tab {nr}
+snippet gettabvar
+	${1:any }gettabvar(${2:nr}, ${3:varname})${4}
+#any    getwinvar({nr}, {varname}) # variable {varname} in window {nr}
+snippet getwinvar
+	${1:any }getwinvar(${2:nr}, ${3:varname})${4}
+#List   synconcealed({lnum}, {col}) # info about concealing
+snippet synconcealed
+	${1:List }synconcealed(${2:lnum}, ${3:col})${4}
+#String iconv({expr}, {from}, {to}) # convert encoding of {expr}
+snippet iconv
+	${1:String }iconv(${2:expr}, ${3:from}, ${4:to})${5}
+#List/Dict filter({expr}, {string}) # remove items from {expr} where {string} is 0
+snippet filter
+	${1:List or Dict }filter(${2:expr}, ${3:string})${4}
+#Number remote_foreground({server}) # bring Vim server to the foreground
+snippet remote_foreground
+	${1:Number }remote_foreground(${2:server})${3}
+#String fnamemodify({fname}, {mods}) # modify file name
+snippet fnamemodify
+	${1:String }fnamemodify(${2:fname}, ${3:mods})${4}
+#any    get({list}, {idx} [, {def}]) # get item {idx} from {list} or {def}
+snippet get #list
+	${1:any }get(${2:list}, ${3:idx}${4:, def})${5}
+#any    get({dict}, {key} [, {def}]) # get item {key} from {dict} or {def}
+snippet get #dict
+	${1:any }get(${2:dict}, ${3:key}${4:, def})${5}
+#any    getbufvar({expr}, {varname}) # variable {varname} in buffer {expr}
+snippet getbufvar
+	${1:any }getbufvar(${2:expr}, ${3:varname})${4}
+#List   reltime([{start} [, {end}]]) # get time value
+snippet reltime
+	${1:List }reltime(${2:start}${3:, end})${4}
+#String strftime({format}[, {time}]) # time in specified format
+snippet strftime
+	${1:String }strftime(${2:format}${3:, time})${4}
+#Number setqflist({list}[, {action}]) # modify quickfix list using {list}
+snippet setqflist
+	${1:String }setqflist(${2:list}${3:, action})${4}
+#String libcall({lib}, {func}, {arg}) # call {func} in library {lib} with {arg}
+snippet libcall
+	${1:String }libcall(${2:lib}, ${3:func}, ${4:arg})${5}
+#String tr({src}, {fromstr}, {tostr}) # translate chars of {src} in {fromstr} to chars in {tostr}
+snippet tr
+	${1:String }tr(${2:src}, ${3:fromstr}, ${4:tostr})${5}
+#Number synID({lnum}, {col}, {trans}) # syntax ID at {lnum} and {col}
+snippet synID
+	${1:Number }synID(${2:lnum}, ${3:col}, ${4:trans})${5}
+#String browsedir({title}, {initdir}) # put up a directory requester
+snippet browsedir
+	${1:String }browsedir(${2:title}, ${3:initdir})${4}
+#Number feedkeys({string} [, {mode}]) # add key sequence to typeahead buffer
+snippet feedkeys
+	${1:Number }feedkeys(${2:string}${3:, mode})${4}
+#String histdel({history} [, {item}]) # remove an item from a history
+snippet histdel
+	${1:String }histdel(${2:history}${3:, item})${4}
+#String histget({history} [, {index}]) # get the item {index} from a history
+snippet histget
+	${1:String }histget(${2:history}${3:, index})${4}
+#any    remove({list}, {idx} [, {end}]) # remove items {idx}-{end} from {list}
+snippet remove #list
+	${1:any }remove(${2:list}, ${3:idx}${4:, end})${5}
+#Number tabpagewinnr({tabarg}[, {arg}]) # number of current window in tab page
+snippet tabpagewinnr
+	${1:Number }tabpagewinnr(${2:tabarg}${3:, arg})${4}
+#Number libcallnr({lib}, {func}, {arg}) # idem, but return a Number
+snippet libcallnr
+	${1:Number }libcallnr(${2:lib}, ${3:func}, ${4:arg})${5}
+#none   complete({startcol}, {matches}) # set Insert mode completion
+snippet complete
+	${1:none }complete(${2:startcol}, ${3:matches})${4}
+#String inputdialog({p} [, {t} [, {c}]]) # like input() but in a GUI dialog
+snippet inputdialog
+	${1:String }inputdialog(${2:p}${3:[, t [, c]]})${4}
+#String inputsecret({prompt} [, {text}]) # like input() but hiding the text
+snippet inputsecret
+	${1:String }inputsecret(${2:prompt}${3:, text})${4}
+#List   insert({list}, {item} [, {idx}]) # insert {item} in {list} [before {idx}]
+snippet insert
+	${1:List }insert(${2:list}, ${3:item}${4:, idx})${5}
+#String strpart({src}, {start}[, {len}]) # {len} characters of {src} at {start}
+snippet strpart
+	${1:String }strpart(${2:src}, ${3:start}${4:, len})${5}
+#Number strdisplaywidth({expr} [, {col}]) # display length of the String {expr}
+snippet strdisplaywidth
+	${1:Number }strdisplaywidth(${2:expr}${3:, col})${4}
+#none   settabvar({nr}, {varname}, {val}) # set {varname} in tab page {nr} to {val}
+snippet settabvar
+	${1:none }settabvar(${2:nr}, ${3:varname}, ${4:val})${5}
+#none   setwinvar({nr}, {varname}, {val}) # set {varname} in window {nr} to {val}
+snippet setwinvar
+	${1:none }setwinvar(${2:nr}, ${3:varname}, ${4:val})${5}
+#List   sort({list} [, {func} [, {dict}]]) # sort {list}, using {func} to compare
+snippet sort
+	${1:List }sort(${2:list}${3:[, func}${4: [, dict]]})${5}
+#Number cursor({lnum}, {col} [, {coladd}]) # move cursor to {lnum}, {col}, {coladd}
+snippet cursor #col
+	${1:Number }cursor(${2:lnum}, ${3:col}${4: [, coladd]})${5}
+#any    call({func}, {arglist} [, {dict}]) # call {func} with arguments {arglist}
+snippet call
+	${1:any }call(${2:func}, ${3:arglist}${4: [, dict]})${5}
+#Number mkdir({name} [, {path} [, {prot}]]) # create directory {name}
+snippet mkdir
+	${1:Number }mkdir(${2:name}${3:, [path}${4: [, prot]]})${5}
+#String globpath({path}, {expr} [, {flag}]) # do glob({expr}) for all dirs in {path}
+snippet globpath
+	${1:String }globpath(${2:path}, ${3:expr}${4:, [flag})${5}
+#Number server2client({clientid}, {string}) # send reply string
+snippet server2client
+	${1:Number }server2client(${2:clientid}, ${3:string})${4}
+#none   setbufvar({expr}, {varname}, {val}) # set {varname} in buffer {expr} to {val}
+snippet setbufvar
+	${1:none }setbufvar(${2:expr}, ${3:varname}, ${4:val})${5}
+#String shellescape({string} [, {special}]) # escape {string} for use as shell command argument
+snippet shellescape
+	${1:String }shellescape(${2:string}${3:, [special]})${4}
+#Number setloclist({nr}, {list}[, {action}]) # modify location list using {list}
+snippet setloclist
+	${1:Number }setloclist(${2:nr}, ${3:list}${4:[, action]})${5}
+#String finddir({name}[, {path}[, {count}]]) # find directory {name} in {path}
+snippet finddir
+	${1:String }finddir(${2:name}${3:[, path}${4:[, count]]})${5}
+#List   getbufline({expr}, {lnum} [, {end}]) # lines {lnum} to {end} of buffer {expr}
+snippet getbufline
+	${1:List }getbufline(${2:expr}, ${3:lnum}${4:[, end]})${5}
+#List   range({expr} [, {max} [, {stride}]]) # items from {expr} to {max}
+snippet range
+	${1:List }range(${2:expr}${3:[, max}${4:[, stride]]})${5}
+#Number remote_peek({serverid} [, {retvar}]) # check for reply string
+snippet remote_peek
+	${1:Number }remote_peek(${2:serverid}${3:[, retvar]})${4}
+#String findfile({name}[, {path}[, {count}]]) # find file {name} in {path}
+snippet findfile
+	${1:String }findfile(${2:name}${3:[, path}${4:[, count]]})${5}
+#String synIDattr({synID}, {what} [, {mode}]) # attribute {what} of syntax ID {synID}
+snippet synIDattr
+	${1:String }synIDattr(${2:synID}, ${3:what}${4:[, mode]})${5}
+#String mapcheck({name}[, {mode} [, {abbr}]]) # check for mappings matching {name}
+snippet mapcheck
+	${1:String }mapcheck(${2:name}${3:[, mode}${4:[, abbr]]})${5}
+#any    gettabwinvar({tabnr}, {winnr}, {name}) # {name} in {winnr} in tab page {tabnr}
+snippet gettabwinvar
+	${1:any }gettabwinvar(${2:tabnr}, ${3:winnr}, ${4:name})${5}
+#Number hasmapto({what} [, {mode} [, {abbr}]]) # TRUE if mapping to {what} exists
+snippet hasmapto
+	${1:Number }hasmapto(${2:what}${3:[, mode}${4:[, abbr]]})${5}
+#Number stridx({haystack}, {needle}[, {start}]) # index of {needle} in {haystack}
+snippet stridx
+	${1:Number }stridx(${2:haystack}, ${3:needle}${4:[, start]})${5}
+#List   split({expr} [, {pat} [, {keepempty}]]) # make |List| from {pat} separated {expr}
+snippet split
+	${1:List }split(${2:expr}${3:[, pat}${4:[, kepempty]]})${5}
+#Number writefile({list}, {fname} [, {binary}]) # write list of lines to file {fname}
+snippet writefile
+	${1:Number }writefile(${2:list}, ${3:fname}${4:[, binary]})${5}
+#List/Dict extend({expr1}, {expr2} [, {expr3}]) # insert items of {expr2} into {expr1}
+snippet extend
+	${1:List or Dict }extend(${2:expr}, ${3:expr}${4:[, expr]})${5}
+#List   readfile({fname} [, {binary} [, {max}]]) # get list of lines from file {fname}
+snippet readfile
+	${1:List }readfile(${2:fname}${3:[, binary}${4:[, max]]})${5}
+#String substitute({expr}, {pat}, {sub}, {flags}) # all {pat} in {expr} replaced with {sub}
+snippet substitute
+	${1:String }substitute(${2:expr}, ${3:pat}, ${4:sub}, ${5:flags})${6}
+#Number strridx({haystack}, {needle} [, {start}]) # last index of {needle} in {haystack}
+snippet strridx
+	${1:Number }strridx(${2:haystack}, ${3:needle}${4:[, start]})${5}
+#Number count({list}, {expr} [, {start} [, {ic}]]) # count how many {expr} are in {list}
+snippet count
+	${1:Number }count(${2:list}, ${3:expr}${4: [, start}${5: [, ic]]})${6}
+#Number index({list}, {expr} [, {start} [, {ic}]]) # index in {list} where {expr} appears
+snippet index
+	${1:Number }index(${2:list}, ${3:expr}${4: [, start}${5: [, ic]]})${6}
+#Number match({expr}, {pat}[, {start}[, {count}]]) # position where {pat} matches in {expr}
+snippet match
+	${1:Number }match(${2:expr}, ${3:pat}${4: [, start}${5: [, count]]})${6}
+#String remote_expr({server}, {string} [, {idvar}]) # send expression
+snippet remote_expr
+	${1:String }remote_expr(${2:server}, ${3:string}${4: [, idvar]})${5}
+#String remote_send({server}, {string} [, {idvar}]) # send key sequence
+snippet remote_send
+	${1:String }remote_send(${2:server}, ${3:string}${4: [, idvar]})${5}
+#String input({prompt} [, {text} [, {completion}]]) # get input from the user
+snippet input
+	${1:String }input(${2:prompt}${3:[, text}${4: [, completion]]})${5}
+#List   spellsuggest({word} [, {max} [, {capital}]]) # spelling suggestions
+snippet spellsuggest
+	${1:List }spellsuggest(${2:word}${3:[, max}${4: [, capital]]})${5}
+#String browse({save}, {title}, {initdir}, {default}) # put up a file requester
+snippet browse
+	${1:String }browse(${2:save}, ${3:title}, ${4:initdir}, ${5:default})${6}
+#Number matchend({expr}, {pat}[, {start}[, {count}]]) # position where {pat} ends in {expr}
+snippet matchend
+	${1:Number }matchend(${2:expr}, ${3:pat}${4:[, start}${5:[, count]]})${6}
+#String matchstr({expr}, {pat}[, {start}[, {count}]]) # {count}'th match of {pat} in {expr}
+snippet matchstr
+	${1:String }matchstr(${2:expr}, ${3:pat}${4:[, start}${5:[, count]]})${6}
+#List   matchlist({expr}, {pat}[, {start}[, {count}]]) # match and submatches of {pat} in {expr}
+snippet matchlist
+	${1:List }matchlist(${2:expr}, ${3:pat}${4:[, start}${5:[, count]]})${6}
+#Number searchdecl({name} [, {global} [, {thisblock}]]) # search for variable declaration
+snippet searchdecl
+	${1:Number }searchdecl(${2:name}${3:[, global}${4:[, thisblock]]})${5}
+#none   settabwinvar({tabnr}, {winnr}, {varname}, {val}) # set {varname} in window {winnr} in tab page {tabnr} to {val}
+snippet settabwinvar
+	${1:none }settabwinvar(${2:tabnr}, ${3:winnr}, ${4:varname}, ${5:val})${6}
+#Number matchadd({group}, {pattern}[, {priority}[, {id}]]) # highlight {pattern} with {group}
+snippet matchadd
+	${1:Number }matchadd(${2:group}, ${3:pattern}${4:[, priority}${5:[, id]]})${6}
+#Number cscope_connection([{num} , {dbpath} [, {prepend}]]) # checks existence of cscope connection
+snippet cscope_connection
+	${1:Number }cscope_connection(${2:num}, ${3:dbpath}${4:[, prepend]})${5}
+#Number confirm({msg} [, {choices} [, {default} [, {type}]]]) # number of choice picked by user
+snippet confirm
+	${1:Number }confirm(${2:msg}${3:[, choices}${4: [, default}${5: [, type]]]})${6}
+#String or Dict maparg({name}[, {mode} [, {abbr} [, {dict}]]]) # rhs of mapping {name} in mode {mode}
+snippet maparg
+	${1:String or Dict }maparg(${2:name}${3:[, mode}${4: [, abbr}${5: [, dict]]]})${6}
+#Number search({pattern} [, {flags} [, {stopline} [, {timeout}]]]) # search for {pattern}
+snippet search
+	${1:Number }search(${2:pattern}${3:[, flags}${4: [,  stopline}${5: [, timeout]]]})${6}
+#List   searchpos({pattern} [, {flags} [, {stopline} [, {timeout}]]]) # search for {pattern}
+snippet searchpos
+	${1:List }searchpos(${2:pattern}${3:[, flags}${4: [,  stopline}${5: [, timeout]]]})${6}
+#Number searchpair({start}, {middle}, {end} [, {flags} [, {skip} [...]]]) # search for other end of start/end pair
+snippet searchpair
+	${1:Number }searchpair(${2:start}, ${3:middle}, ${4:end}${5: [, flags}${6:[, skip}${7: [...]]]})${8}
+#List   searchpairpos({start}, {middle}, {end} [, {flags} [, {skip} [...]]]) # search for other end of start/end pair
+snippet searchpairpos
+	${1:List }searchpairpos(${2:start}, ${3:middle}, ${4:end}${5: [, flags}${6:[, skip}${7: [...]]]})${8}
