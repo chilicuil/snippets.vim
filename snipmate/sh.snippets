@@ -61,5 +61,15 @@ snippet r>
 	#redirect stderr to stdout
 	exec 2>&1
 	${2}
+snippet redirect
+	#close stdout
+	exec 1<&-
+	#close stderr
+	exec 2<&-
+	#open stdout as $log_file file for read and write.
+	exec 1<> ${1:"logfile"}
+	#redirect stderr to stdout
+	exec 2>&1
+	${2}
 snippet version
 	`strftime("%Y.%m.%d-%H:%M")`
