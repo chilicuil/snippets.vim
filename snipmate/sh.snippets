@@ -43,6 +43,8 @@ snippet fun
 	${1:_function}() {
 	    ${2}
 	}
+snippet progname
+	progname="$(expr "${${1:0}}" : '.*/\([^/]*\)')"${2}
 snippet basename
 	expr "${1:var}" : '.*/\([^/]*\)'${2}
 snippet echo
