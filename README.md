@@ -2,7 +2,7 @@
 
 ## Description
 
-The **vim-snippets** repository contains a collection of code snippets for **Vim**. In particular, it contains snippets for the following snippet engines:
+The **snippets.vim** repository contains a collection of code snippets for **Vim**. In particular, it contains snippets for the following snippet engines:
 
 * [snipMate](https://github.com/msanders/snipmate.vim)
 * others in the future
@@ -15,8 +15,8 @@ It has been specialized for C and php, containing snippets for every standard fu
 
 Add the following lines to your **~/.vimrc**:
 
-    Bundle 'chilicuil/vim-snippets'
-    let g:snippets_dir = "~/.vim/bundle/vim-snippets/snipmate/"
+    Bundle 'chilicuil/snippets.vim'
+    let g:snippets_dir = "~/.vim/bundle/snippets.vim/snipmate/"
 
 Then run the following command in Vim:
 
