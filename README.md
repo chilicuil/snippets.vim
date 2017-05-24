@@ -15,7 +15,7 @@ It has been specialized for C and php, containing snippets for every standard fu
 
 Add the following lines to your **~/.vimrc**:
 
-    Bundle 'chilicuil/snippets.vim'
+    Bundle 'javier-lopez/snippets.vim'
     let g:snippets_dir = "~/.vim/bundle/snippets.vim/snipmate/"
 
 Then run the following command in Vim:
