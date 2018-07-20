@@ -1,0 +1,24 @@
+snippet if
+	{% if ${1:condition} %}
+		${2:#statements}
+	{% endif %}
+snippet elif
+	{% elif ${1:condition} %}
+		${2:#statements}
+snippet else
+	{% else %}
+		${2:#statements}
+snippet for
+	{% for ${1:item} in ${2:items} %}
+		${3:#statements}
+	{% endfor %}
+snippet extends
+	{% extends "${1:file}" %}${2}
+snippet block
+	{% block ${1:block} %}
+		${2:#statements}
+	{% endblock %}
+snippet include
+	{% include "${1:file}" %}${2}
+snippet {
+	{{${1:variable|comand(parameter)}}}${2}
