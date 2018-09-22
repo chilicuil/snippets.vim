@@ -94,14 +94,11 @@ snippet function
 	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
 		${4:#code ...}
-snippet def function
+snippet def
 	def ${1:function}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
 		${4:#code ...}
 snippet method
-	def ${1:method}(self, ${2:arg}):
-		${3:#code ...}
-snippet def method
 	def ${1:method}(self, ${2:arg}):
 		${3:#code ...}
 snippet property
